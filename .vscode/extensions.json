@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "csstools.postcss",
+    "formulahendry.auto-complete-tag",
+    "eamodio.gitlens",
+    "astro-build.astro-vscode"
+  ]
+}
