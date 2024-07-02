@@ -1,6 +1,6 @@
 ---
 import i18next from "i18next";
-
+import Footer from "./Footer.astro";
 interface Props {
 	title: string;
 }
@@ -16,7 +16,27 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
+	<body class="font-sans"/>
 	<body>
 		<slot />
+		<Footer />
 	</body>
 </html>
+
+<style is:global>
+
+	html {
+		scroll-behavior: smooth;
+		background: #0072C6;
+		color: #fff;
+	}
+	body {
+		margin: 48px;
+		-webkit-text-size-adjust: none;
+		-ms-text-size-adjust: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-smooting: antialiased;
+	}
+</style>
+
