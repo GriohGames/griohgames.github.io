@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components'
 const socialMedias = ["x", "ig", "spotfy", "youtube"]
 ---
 <footer class="flex flex-col items-center gap-4">
-  <div class="flex flex-row gap-4">
+  <div class="flex flex-row gap-4 lg:hidden">
     {socialMedias.map((el) => (
       <button><Icon name={el} /></button>
     ))}
