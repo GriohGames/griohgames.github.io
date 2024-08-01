@@ -7,6 +7,7 @@ export default {
 		colors: {
 			primary: '#0072C6',
 			white: '#FFFFFF',
+			ghostWhite: '#F8E8F1',
 			black: '#000000',
 			gray: "#00000080",
 		},

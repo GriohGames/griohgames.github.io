@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import { Astronav, MenuIcon } from "astro-navbar";
+
+const menu = [
+	{name: 'Inicio', router: '/', icon: 'home'},
+	{name: 'Jogos', router: '/jogos', icon: 'joystick'},
+	{name: 'Podcast', router: '/podcast', icon: 'headset'},
+	{name: 'Sobre', router: '/sobre', icon: 'logo_mobile'},
+	{name: 'Contato', router: '/contato', icon: 'chat'},
+]
+---
+
+<header class="flex justify-between p-5 gap-5 lg:hidden">
+  <Astronav closeOnClick>
+     <div class="flex w-full justify-between items-center">
+        <Icon name='logo_mobile' size={40}/>
+        <div class="block lg:hidden">
+           <MenuIcon class="text-gray-800" />
+        </div>
+     </div>
+  </Astronav>
+</header>
+
+
+
+
