@@ -1,26 +1,44 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import { Astronav, MenuIcon } from "astro-navbar";
+import { Astronav, CloseIcon, MenuIcon, MenuItems, OpenIcon } from "astro-navbar";
 
-const menu = [
-	{name: 'Inicio', router: '/', icon: 'home'},
-	{name: 'Jogos', router: '/jogos', icon: 'joystick'},
-	{name: 'Podcast', router: '/podcast', icon: 'headset'},
-	{name: 'Sobre', router: '/sobre', icon: 'logo_mobile'},
-	{name: 'Contato', router: '/contato', icon: 'chat'},
-]
+import { MenuItens } from '../data/menu'
 ---
 
-<header class="flex justify-between p-5 gap-5 lg:hidden">
+<header class="flex justify-between p-5 gap-5 lg:hidden container">
   <Astronav closeOnClick>
      <div class="flex w-full justify-between items-center">
-        <Icon name='logo_mobile' size={40}/>
+         <a href="#">
+            <Icon name='logo_mobile' size={40}/>
+         </a>
+        
         <div class="block lg:hidden">
-           <MenuIcon class="text-gray-800" />
+         <MenuIcon>
+            <OpenIcon>
+              <Icon name='menu_sandwich' size={30}/>
+            </OpenIcon>
+            <CloseIcon>
+               <Icon name='close' size={30}/>
+            </CloseIcon>
+          </MenuIcon>
         </div>
-     </div>
-  </Astronav>
+      </div>
+      
+   </Astronav>
+   
+   <MenuItems class="hidden lg:flex absolute bg-primary h-full mt-14 left-0 w-[65%]">
+      <ul class="flex flex-col gap-4 mt-14">
+         {MenuItens.map((el) => (
+            <a href={el.router}>
+               <li class="flex items-center py-2 px-4 gap-2 align-center rounded-full hover:bg-white hover:text-primary">
+                     <Icon class="hover:text-primary" name={el.icon} size={20}/>
+                     <p class="uppercase text-xl font-bold ">{el.name}</p>
+               </li>
+            </a>
+         ))}
+      </ul> 
+   </MenuItems>
 </header>
 
 

@@ -2,13 +2,8 @@
 import { Icon } from 'astro-icon/components';
 import SocialMedias from './SocialMedias.astro';
 
-const menu = [
-	{name: 'Inicio', router: '/', icon: 'home'},
-	{name: 'Jogos', router: '/jogos', icon: 'joystick'},
-	{name: 'Podcast', router: '/podcast', icon: 'headset'},
-	{name: 'Sobre', router: '/sobre', icon: 'logo_mobile'},
-	{name: 'Contato', router: '/contato', icon: 'chat'},
-]
+import { MenuItens } from '../data/menu'
+
 ---
 
 <nav class="lg:flex lg:flex-col lg:gap-12 lg:my-12 lg:ml-40 lg:pr-10 hidden">
@@ -16,7 +11,7 @@ const menu = [
 		<Icon name='logo_desktop' size={180}/>
 
 		<ul class="flex flex-col gap-4 mt-12 mb-36">
-			{menu.map((el) => (
+			{MenuItens.map((el) => (
 					<a href={el.router}>
 						<li class="flex items-center py-2 px-4 gap-2 align-center rounded-full hover:bg-white hover:text-primary">
 								<Icon class="hover:text-primary" name={el.icon} size={22}/>
