@@ -1,50 +1,52 @@
 ---
-import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
-import MenuDesktop from '@/components/MenuDesktop.astro';
-import i18next from "i18next";
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import MenuDesktop from '@/components/MenuDesktop.astro'
+import i18next from 'i18next'
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang={i18next.language}>
-	<head>
-		<meta charset="UTF-8" />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body class="font-sans"/>
-	<body>
-		<Header />
-		<div class="flex gap-4 lg:h-[90vh] h-[85vh]">
-				<MenuDesktop />
-				<main class="bg-ghostWhite w-full py-12 pl-11 pr-64">
-					<slot />
-				</main>
-		</div>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="font-sans">
+    <body>
+      <Header />
+      <div class="flex gap-4 lg:h-[90vh] h-[85vh]">
+        <MenuDesktop />
+        <main class="bg-ghostWhite w-full py-12 pl-11 pr-64">
+          <slot />
+        </main>
+      </div>
+      <Footer />
+    </body>
+  </body>
+
+  <style is:global>
+    html {
+      scroll-behavior: smooth;
+      background: #0072c6;
+      color: #fff;
+    }
+    body {
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-smooting: antialiased;
+    }
+  </style>
 </html>
-
-<style is:global>
-
-	html {
-		scroll-behavior: smooth;
-		background: #0072C6;
-		color: #fff;
-	}
-	body {
-		-webkit-text-size-adjust: none;
-		-ms-text-size-adjust: none;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		font-smooting: antialiased;
-	}
-</style>
-

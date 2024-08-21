@@ -1,10 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const socialMedias = ["x", "ig", "spotfy", "youtube"]
+const socialMedias = ['x', 'ig', 'spotfy', 'youtube']
 ---
+
 <div class="flex flex-row gap-4 mx-4">
-  {socialMedias.map((el) => (
-    <button><Icon name={el} /></button>
-  ))}
+  {
+    socialMedias.map((el) => (
+      <button>
+        <Icon name={el} />
+      </button>
+    ))
+  }
 </div>

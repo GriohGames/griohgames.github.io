@@ -2,17 +2,17 @@
 // 45c5b98fae37dae277517e0a81fab6e631030160dcbfb70bf46a9a8173b2e405
 
 declare module 'virtual:astro-icon' {
-	export type Icon = 
-		| "chat"
-		| "headset"
-		| "home"
-		| "ig"
-		| "joystick"
-		| "logo_desktop"
-		| "logo_mobile"
-		| "spotfy"
-		| "x"
-		| "youtube"
-		| "close"
-		| "menu_sandwich";
+  export type Icon =
+    | 'chat'
+    | 'headset'
+    | 'home'
+    | 'ig'
+    | 'joystick'
+    | 'logo_desktop'
+    | 'logo_mobile'
+    | 'spotfy'
+    | 'x'
+    | 'youtube'
+    | 'close'
+    | 'menu_sandwich'
 }
