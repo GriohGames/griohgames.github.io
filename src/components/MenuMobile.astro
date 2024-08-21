@@ -1,46 +1,47 @@
 ---
-import { Icon } from 'astro-icon/components';
-
-import { Astronav, CloseIcon, MenuIcon, MenuItems, OpenIcon } from "astro-navbar";
-
+import { Icon } from 'astro-icon/components'
+import { Astronav, CloseIcon, MenuIcon, MenuItems, OpenIcon } from 'astro-navbar'
 import { MenuItens } from '../data/menu'
+
+const currentPage = Astro.url.pathname
 ---
 
-<header class="flex justify-between p-5 gap-5 lg:hidden container">
-  <Astronav closeOnClick>
-     <div class="flex w-full justify-between items-center">
-         <a href="#">
-            <Icon name='logo_mobile' size={40}/>
-         </a>
-        
-        <div class="block lg:hidden">
-         <MenuIcon>
-            <OpenIcon>
-              <Icon name='menu_sandwich' size={30}/>
-            </OpenIcon>
-            <CloseIcon>
-               <Icon name='close' size={30}/>
-            </CloseIcon>
-          </MenuIcon>
-        </div>
-      </div>
-      
-   </Astronav>
-   
-   <MenuItems class="hidden lg:flex absolute bg-primary h-full mt-14 left-0 w-[65%]">
-      <ul class="flex flex-col gap-4 mt-14">
-         {MenuItens.map((el) => (
-            <a href={el.router}>
-               <li class="flex items-center py-2 px-4 gap-2 align-center rounded-full hover:bg-white hover:text-primary">
-                     <Icon class="hover:text-primary" name={el.icon} size={20}/>
-                     <p class="uppercase text-xl font-bold ">{el.name}</p>
-               </li>
-            </a>
-         ))}
-      </ul> 
-   </MenuItems>
+<header class="container flex justify-between gap-5 p-5 lg:hidden">
+	<Astronav closeOnClick>
+		<div class="flex w-full items-center justify-between">
+			<a href="#">
+				<Icon name="logo_mobile" size={40} />
+			</a>
+			<div class="block lg:hidden">
+				<MenuIcon>
+					<OpenIcon>
+						<Icon name="menu_sandwich" size={30} />
+					</OpenIcon>
+					<CloseIcon>
+						<Icon name="close" size={30} />
+					</CloseIcon>
+				</MenuIcon>
+			</div>
+		</div>
+	</Astronav>
+
+	<MenuItems class="absolute left-0 mt-14 hidden h-[86vh] w-[65vw] bg-primary lg:flex">
+		<ul class="mt-14 flex flex-col gap-4">
+			{
+				MenuItens.map((el) => (
+					<a href={el.router}>
+						<li
+							class:list={[
+								'align-center mx-4 flex items-center gap-2 rounded-full px-4 py-2 hover:bg-white hover:text-primary',
+								currentPage === el.router && 'bg-white text-primary'
+							]}
+						>
+							<Icon class="hover:text-primary" name={el.icon} size={20} />
+							<p class="text-xl font-bold uppercase">{el.name}</p>
+						</li>
+					</a>
+				))
+			}
+		</ul>
+	</MenuItems>
 </header>
-
-
-
-
