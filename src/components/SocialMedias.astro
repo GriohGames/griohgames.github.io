@@ -1,15 +1,22 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const socialMedias = ['x', 'ig', 'spotfy', 'youtube']
+const socialMedias = [
+	{ name: 'x', color: '#000' },
+	{ name: 'ig', color: '#E1306C' },
+	{ name: 'spotfy', color: '#1ED760' },
+	{ name: 'youtube', color: '#FF0000' }
+]
+
+const { isColored = false } = Astro.props
 ---
 
-<div class="flex flex-row gap-4 mx-4">
-  {
-    socialMedias.map((el) => (
-      <button>
-        <Icon name={el} />
-      </button>
-    ))
-  }
+<div class="mx-4 flex flex-row gap-4">
+	{
+		socialMedias.map((el) => (
+			<button>
+				<Icon name={el.name} color={isColored ? el.color : '#fff'} />
+			</button>
+		))
+	}
 </div>

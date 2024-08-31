@@ -2,8 +2,21 @@
 import { t } from 'i18next'
 
 import Base from './Base.astro'
+import SocialMedias from '@/components/SocialMedias.astro'
 ---
 
 <Base title={t('wellcome')}>
-  <h1 class="text-black text-3xl">Contato</h1>
+	<div class="mb-12">
+		<h1 class="mb-8 text-[64px] font-semibold text-black">Contato</h1>
+
+		<p class="my-4 text-[24px] text-black">
+			Você pode entrar em contato conosco pelos e-mails <u>griohgames@gmail.com</u> ou
+			<u>griohgames@hotmail.com</u>;
+		</p>
+	</div>
+
+	<div>
+		<h2 class="mb-8 text-3xl font-semibold text-primary">Conheça nossas redes</h2>
+		<SocialMedias class="px-0" isColored={true} />
+	</div>
 </Base>
