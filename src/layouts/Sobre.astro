@@ -2,6 +2,19 @@
 import { t } from 'i18next'
 
 import Base from './Base.astro'
+
+const founders = [
+	{
+		name: 'Fernando Fernandes',
+		role: 'Fundador e Game Designer',
+		img: '/img/fernando.png'
+	},
+	{
+		name: 'Felipe Oliveira',
+		role: 'Fundador e Roteirista',
+		img: '/img/felipe.png'
+	}
+]
 ---
 
 <Base title={t('wellcome')}>
@@ -32,7 +45,19 @@ import Base from './Base.astro'
 		<p>Somos a Grioh e contamos histórias por meio de jogos para o hoje e o amanhã.</p>
 	</div>
 
-	<div>
+	<div class="">
 		<h2 class="mb-8 text-3xl font-semibold text-primary">Nosso time</h2>
+
+		<div class="flex gap-12">
+			{
+				founders.map((founder) => (
+					<div class="flex flex-col items-center gap-2">
+						<img src={founder.img} width="120px" alt="" />
+						<p class="text-[16px] font-bold text-primary">{founder.name}</p>
+						<p class="text-[14px] text-gray">{founder.role}</p>
+					</div>
+				))
+			}
+		</div>
 	</div>
 </Base>
