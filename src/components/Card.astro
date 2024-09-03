@@ -1,0 +1,44 @@
+---
+interface Props {
+	size?: 'small' | 'large'
+	image: string
+	title: string
+	content: string
+	style?: string
+}
+const { image, title, content, size = 'small', style = '' } = Astro.props
+---
+
+<div class={`card ${size === 'small' ? 'card-small' : 'card-big'} ${style}`}>
+	<img class="image" src={image} alt={title} />
+	<div class="content bg-primary">
+		<h2 class="mb-2 text-[32px] font-bold">{title}</h2>
+		<p class="text-[16px]">{content}</p>
+	</div>
+</div>
+
+<style>
+	.card {
+		box-shadow: 8px 8px 0px 0px rgba(246, 176, 0, 1);
+		border-radius: 15px;
+
+		img {
+			border-radius: 15px 15px 0px 0px;
+		}
+
+		.content {
+			border-radius: 0px 0px 15px 15px;
+			padding: 1.5rem;
+		}
+	}
+
+	.card-small {
+		max-width: 398px;
+		height: fit-content;
+	}
+
+	.card-big {
+		max-width: 693px;
+		height: fit-content;
+	}
+</style>
