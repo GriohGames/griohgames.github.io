@@ -2,29 +2,35 @@
 interface Props {
 	size?: 'small' | 'large'
 	image: string
-	title: string
-	content: string
+	title?: string
+	content?: string
 	style?: string
+	alt?: string
 }
-const { image, title, content, size = 'small', style = '' } = Astro.props
+const { image, title, content, size = 'small', style = '', alt } = Astro.props
+const hasText = title || content
 ---
 
 <div class={`card ${size === 'small' ? 'card-small' : 'card-big'} ${style}`}>
-	<img class="image" src={image} alt={title} />
-	<div class="content bg-primary">
-		<h2 class="mb-2 text-[32px] font-bold">{title}</h2>
-		<p class="text-[16px]">{content}</p>
-	</div>
+	<img
+		class={`${hasText ? 'rounded-t-[15px]' : 'rounded-[15px]'}`}
+		src={image}
+		alt={alt || title}
+	/>
+	{
+		hasText ? (
+			<div class="content bg-primary">
+				<h2 class="mb-2 text-[32px] font-bold">{title}</h2>
+				<p class="text-[16px]">{content}</p>
+			</div>
+		) : null
+	}
 </div>
 
 <style>
 	.card {
 		box-shadow: 8px 8px 0px 0px rgba(246, 176, 0, 1);
 		border-radius: 15px;
-
-		img {
-			border-radius: 15px 15px 0px 0px;
-		}
 
 		.content {
 			border-radius: 0px 0px 15px 15px;

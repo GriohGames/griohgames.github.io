@@ -2,8 +2,11 @@
 import { t } from 'i18next'
 
 import Base from './Base.astro'
+import Card from '@/components/Card.astro'
 ---
 
 <Base title={t('wellcome')}>
 	<h1 class="mb-8 text-[64px] font-semibold text-black">Nossos jogos</h1>
+
+	<Card size="large" image="/img/site-games-bodyguard.jpg" alt="bodyguards game logo" />
 </Base>
