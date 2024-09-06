@@ -2,8 +2,71 @@
 import { t } from 'i18next'
 
 import Base from './Base.astro'
+import { Icon } from 'astro-icon/components'
+
+const episodies = [
+	{
+		title: 'Episódio 1',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+	},
+	{
+		title: 'Episódio 2',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+	},
+	{
+		title: 'Episódio 3',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+	},
+	{
+		title: 'Episódio 5',
+		description:
+			'Lorem ipsum dolor sit amet,p consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+	}
+]
 ---
 
 <Base title={t('wellcome')}>
-	<h1 class="mb-8 text-[64px] font-semibold text-black">Grioh Cast</h1>
+	<h1 class="mb-8 text-[32px] font-semibold text-black lg:text-[64px]">Grioh Cast</h1>
+
+	<div class="flex flex-col gap-9">
+		<img src="/img/grioh-cast.jpg" width="638" alt="grioh cast" />
+
+		<p class="text-black">
+			Grioh Cast é um podcast que lança um olhar sobre a diversidade em jogos, trazendo debates
+			sobre cultura, regionalismo, acessibilidade, negritude e diversos outros temas sob a
+			perspectiva dos games;
+		</p>
+
+		<div class="flex flex-col justify-between lg:flex-row">
+			<div class="flex items-center gap-3">
+				<Icon name="play" size={32} />
+				<a class="text-black underline" href="">Ouça agora</a>
+			</div>
+
+			<div class="align-center flex gap-7">
+				<p class="text-[22px] text-gray">ou ouça no</p>
+				<div class="flex items-center gap-2">
+					<Icon name="deezer" size={21} />
+					<Icon name="soundcloud" size={28} />
+					<Icon name="youtube" color="#FF0000" size={23} />
+					<Icon name="spotfy" color="#1ED760" size={24} />
+					<Icon name="apple_podcast" size={23} />
+					<Icon name="google_podcast" size={23} />
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-col gap-8">
+			{
+				episodies.map((el) => (
+					<div class="flex flex-col gap-3">
+						<h2 class="mb-8 text-[40px] text-black">{el.title}</h2>
+						<p class="text-black">{el.description}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
 </Base>

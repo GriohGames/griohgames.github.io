@@ -6,7 +6,7 @@ import Card from '@/components/Card.astro'
 ---
 
 <Base title={t('wellcome')}>
-	<h1 class="mb-8 text-[64px] font-semibold text-black">Boas vindas</h1>
+	<h1 class="mb-8 text-[32px] font-semibold text-black lg:text-[64px]">Boas vindas</h1>
 
 	<div class="mb-12 flex w-full">
 		<Card
@@ -24,19 +24,18 @@ import Card from '@/components/Card.astro'
 				title="Jogos"
 				content="Conheça nossos jogos em desenvolvimento!"
 			/>
-
 			<Card
-				image="/img/site-home-logo.jpg"
-				title="Conheça nosso Estúdio!"
-				content="Grioh Games é um pequeno e independente estúdio de jogos fundado por Fernando Fernandes e Felipe Oliveira que são encantados com a cultura brasileira, amantes de jogos e acessibilidade."
+				image="/img/site-home-cast.jpg"
+				title="Grioh Cast"
+				content="Grioh Cast é um podcast que lança um olhar sobre a diversidade em jogos"
 			/>
 		</div>
 
 		<div class="flex w-full flex-col md:w-1/2">
 			<Card
-				image="/img/site-home-cast.jpg"
-				title="Grioh Cast"
-				content="Grioh Cast é um podcast que lança um olhar sobre a diversidade em jogos"
+				image="/img/site-home-logo.jpg"
+				title="Conheça nosso Estúdio!"
+				content="Grioh Games é um pequeno e independente estúdio de jogos fundado por Fernando Fernandes e Felipe Oliveira que são encantados com a cultura brasileira, amantes de jogos e acessibilidade."
 			/>
 		</div>
 	</div>
