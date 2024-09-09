@@ -5,8 +5,7 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://griohgames.github.io',
-  base: '/site-grioh',
+  site: 'https://griohgames.com',
   integrations: [
     astroI18next({
       baseLanguage: 'pt',
