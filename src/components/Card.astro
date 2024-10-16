@@ -6,23 +6,26 @@ interface Props {
 	content?: string
 	style?: string
 	alt?: string
+	path?: string
 }
-const { image, title, content, size = 'small', style = '', alt } = Astro.props
+const { image, title, content, size = 'small', style = '', alt, path = '' } = Astro.props
 const hasText = title || content
 ---
 
-<div class={`card ${size === 'small' ? 'lg:w-[380px] h-auto' : 'max-w-[800px] h-auto'} ${style}`}>
-	<img class={`${hasText ? 'rounded-t-2xl' : 'rounded-2xl'}`} src={image} alt={alt || title} />
+<a href={path}>
+	<div class={`card ${size === 'small' ? 'lg:w-[380px] h-auto' : 'max-w-[800px] h-auto'} ${style}`}>
+		<img class={`${hasText ? 'rounded-t-2xl' : 'rounded-2xl'}`} src={image} alt={alt || title} />
 
-	{
-		hasText ? (
-			<div class="content bg-primary">
-				<h2 class={`mb-2 ${size === 'small' ? '' : 'text-[32px]'} font-bold`}>{title}</h2>
-				<p class="text-[16px]">{content}</p>
-			</div>
-		) : null
-	}
-</div>
+		{
+			hasText ? (
+				<div class="content bg-primary">
+					<h2 class={`mb-2 ${size === 'small' ? '' : 'text-[32px]'} font-bold`}>{title}</h2>
+					<p class="text-[16px]">{content}</p>
+				</div>
+			) : null
+		}
+	</div>
+</a>
 
 <style>
 	.card {

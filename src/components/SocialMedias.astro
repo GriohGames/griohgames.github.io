@@ -1,11 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { navigate } from 'astro:transitions/client'
 
 const socialMedias = [
-	{ name: 'linkedin', color: '#0078D4' },
-	{ name: 'ig', color: '#E1306C' },
-	{ name: 'youtube', color: '#FF0000' },
-	{ name: 'spotfy', color: '#1ED760' }
+	{ name: 'linkedin', color: '#0078D4', link: 'https://www.linkedin.com/company/grioh-games' },
+	{ name: 'ig', color: '#E1306C', link: 'https://www.instagram.com/griohgames/' },
+	{ name: 'youtube', color: '#FF0000', link: '' },
+	{ name: 'spotfy', color: '#1ED760', link: '' }
 ]
 
 const { isColored = false } = Astro.props
