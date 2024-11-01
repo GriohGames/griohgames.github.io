@@ -1,0 +1,16 @@
+---
+import Card from './Card.astro'
+
+interface Props {
+	mainImage: string
+	otherImages: Array<string>
+}
+const { mainImage, otherImages } = Astro.props
+---
+
+<div class="my-8 flex w-auto flex-col lg:mr-40">
+	<img src={mainImage} alt="main image" />
+	<div class="my-8 hidden flex-row justify-center gap-10 lg:flex">
+		{otherImages?.map((el) => <img src={el} width="180" alt="mini images" />)}
+	</div>
+</div>

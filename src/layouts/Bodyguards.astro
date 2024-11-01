@@ -1,11 +1,25 @@
 ---
+import Gallery from '@/components/Gallery.astro'
 import Base from './Base.astro'
 ---
 
 <Base title={'BodyGuards'}>
 	<div class="mb-12">
+		<a
+			href="/jogos"
+			class="my-4 flex w-fit rounded border border-primary p-2 text-primary lg:hidden"
+			>←Visualizar todos os jogos</a
+		>
 		<h1 class="mb-8 text-[32px] font-bold text-black lg:text-[64px]">BodyGuards</h1>
 
+		<Gallery
+			mainImage="/images/site-games-bodyguard-main.png"
+			otherImages={[
+				'/images/site-games-bodyguard-aux1.png',
+				'/images/site-games-bodyguard-aux2.png',
+				'/images/site-games-bodyguard-aux3.png'
+			]}
+		/>
 		<div class="flex flex-col gap-8">
 			<div>
 				<h2 class="mb-4 text-4xl font-bold text-black">Descrição</h2>
