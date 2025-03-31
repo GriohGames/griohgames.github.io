@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.1",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.12.3",
+    "astro": "^4.16.18",
     "astro-i18next": "^1.0.0-beta.21",
     "astro-icon": "^1.1.0",
     "astro-navbar": "^2.3.3",

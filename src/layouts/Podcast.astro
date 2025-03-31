@@ -6,24 +6,53 @@ import { Icon } from 'astro-icon/components'
 
 const episodies = [
 	{
-		title: 'Episódio 1',
+		title: 'Episódio 1: Afrogames e a Produção de Jogos Eletrônicos no Brasil',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+			'No primeiro programa do podcast, vamos bater um papo com Marcos e Zé Wilson, do estúdio de jogos indie Sue the Real para falar sobre o tema:  Afrogames e a produção de Jogos Eletrônicos no Brasil.',
+		link: 'https://open.spotify.com/episode/6c9NcRbpKE8En40EZRC7zC?si=f8979293ec2a4ffd',
+		transcription:
+			'https://docs.google.com/document/d/1Yk52m4sLgfe04Fxxsiy1lXPcqGd54KJp/edit?usp=drive_link&ouid=113325741852354473788&rtpof=true&sd=true'
 	},
 	{
-		title: 'Episódio 2',
+		title: 'Episódio 2 - Acessibilidade e Jogos Indie Brasileiros',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+			'Neste segundo programa, convidamos Belle Utsch, especialista em acessibilidade digital, que também atua com foco em jogos digitais, além de ser streamer, para conversar com a gente sobre o desenvolvimento de jogos indie acessíveis no Brasil',
+		link: 'https://open.spotify.com/episode/5hcVgjGcATCwkzGPqjgPyW?si=5d4f30cb72024aa5',
+		transcription:
+			'https://docs.google.com/document/d/1j-Ci3hY8qx2bGvA0OJLfxQ_ThIhq4VTH/edit?usp=drive_link&ouid=113325741852354473788&rtpof=true&sd=true'
 	},
 	{
-		title: 'Episódio 3',
+		title: 'Episódio 3 - Vivências Femininas e suas Representações nos Jogos Brasileiros',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+			'No terceiro episódio, temos uma conversa imperdível com Tainá Felix, da Game e Arte, explorando as vivências femininas e suas representações nos jogos brasileiros. É uma conversa cheia de reflexões importantes para nos ajudar a ampliar o debate sobre como percebemos a(s) figura(s) feminina(s), ainda hoje, na nossa sociedade! Só vem que o papo tá bom demais!',
+		link: 'https://open.spotify.com/episode/4h3X2wv6ck06yRVxglSWpe?si=8662549f3d554e08',
+		transcription:
+			'https://docs.google.com/document/d/1gBI8JZa6Da0YskkKre52M2TUyq8CFNSE/edit?usp=drive_link&ouid=113325741852354473788&rtpof=true&sd=true'
 	},
 	{
-		title: 'Episódio 5',
+		title:
+			'Episódio 4 - Mangrove no Jogo, Nordeste no Topo! Jogos Indie Brasileiros e Regionalidades',
 		description:
-			'Lorem ipsum dolor sit amet,p consectetur adipiscing elit. Non facilisi eget ut sodales nec lacus egestas enim. In sed purus massa orci. Auctor fermentum, mauris urna faucibus a maecenas at fringilla mauris.'
+			'Mais um episódio! E hoje nós vamos bater um papo sobre Jogos Indie Brasileiros e Regionalidades, com Rafael Nasper, Game designer de formação, CEO e fundador da Mangrove Game Studio e Vice Presidente da Associação Pernambucana de Jogos, a Playnambuco. Você não pode perder!',
+		link: 'https://open.spotify.com/episode/0t9U05S7uRUx065p7jzAAy?si=mgwKVzSkQt6mAZ2GqTngag',
+		transcription:
+			'https://docs.google.com/document/d/16wZTDP67jf86y-KWANfCyU-cfhJPCiAc/edit?usp=drive_link&ouid=113325741852354473788&rtpof=true&sd=true'
+	},
+	{
+		title: 'Episódio 5 – Jogos e a Representatividade Trans',
+		description:
+			'Hoje vamos conversar sobre Jogos e a Representatividade Trans com Agnes Inácio, uma Software Developer e Game Dev que atualmente está produzindo seu primeiro projeto de game solo o "Omnious Rift". Com certeza você vai curtir!',
+		link: 'https://open.spotify.com/episode/7iYPsXQPLJLMDCTuQX8HcX?si=PkAlC3XvQlenXQgE_vhLgw',
+		transcription:
+			'https://docs.google.com/document/d/1zHMdpY6Psj0oP-BoYRmQ8DwsRXWz5CQ3ynPsHm9go-A/edit?usp=drive_link'
+	},
+	{
+		title: 'Episódio 6 - Formação de Comunidades e Jogos Indie Brasileiros',
+		description:
+			'Neste episódio, conversamos com Flávia Gasi, uma profissional super plural, atuando como escritora, professora, doutora em semiótica, e com uma carreira que passa por várias áreas, como jornalismo, pesquisa acadêmica, desenvolvimento de jogos e ativismo digital. Batemos um papo sobre o cenário de Jogos Indie Brasileiros e a Formação de Comunidades! Vai perder? Se eu fosse você, não perderia!',
+		link: 'https://open.spotify.com/episode/7KeFl9ZsonV36cPKCneUlM?si=AuylbvY4Sga03h5b3CCfMg',
+		transcription:
+			'https://docs.google.com/document/d/1sTKPYpLVThx0G85hpBUTohRlaxmm3_oZEG3Q8fuwaVg/edit?usp=drive_link'
 	}
 ]
 ---
@@ -61,7 +90,21 @@ const episodies = [
 			{
 				episodies.map((el) => (
 					<div class="flex flex-col gap-3">
-						<h2 class="mb-8 text-[40px] text-black">{el.title}</h2>
+						<h2 class="text-[40px] text-black">{el.title}</h2>
+						<p class="mb-4 text-black">
+							<a
+								class="text-black underline"
+								target="_blank"
+								href="https://open.spotify.com/show/4I8sKZmpvc7Ndh8Q6dgrXz"
+							>
+								Ouça agora
+							</a>
+							|
+							<a class="text-black underline" target="_blank" href={el.transcription}>
+								Transcrição
+							</a>
+						</p>
+
 						<p class="text-black">{el.description}</p>
 					</div>
 				))
